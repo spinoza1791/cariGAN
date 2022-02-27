@@ -41,7 +41,7 @@ def generate(
 
 
 if __name__ == "__main__":
-    device = "cuda" if torch.cuda.is_available() else 'cpu'
+    device = 'cpu' #"cuda" if torch.cuda.is_available() else 'cpu'
 
     parser = argparse.ArgumentParser(description="Generate caricatures from user input images")
 
