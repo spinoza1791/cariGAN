@@ -42,7 +42,7 @@ class perceptual_module(torch.nn.Module):
 
 # re-normalize image into vgg image normalization scheme
 class TO_VGG(object):
-    def __init__(self, device="cuda"):
+    def __init__(self, device="cpu"):
         self.s_mean = torch.from_numpy(np.asarray([0.5, 0.5, 0.5])).view(
             1, 3, 1, 1).type(torch.FloatTensor).to(device)
         self.s_std = torch.from_numpy(np.asarray([0.5, 0.5, 0.5])).view(
@@ -366,7 +366,7 @@ def parse_args():
 
 
 if __name__ == "__main__":
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cpu" #"cuda" if torch.cuda.is_available() else "cpu"
 
     args = parse_args()
 
