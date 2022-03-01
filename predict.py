@@ -19,7 +19,7 @@ from invert import *
 
 class Predictor(cog.Predictor):
     def setup(self):
-        self.device = "cuda" if torch.cuda.is_available() else 'cpu'
+        self.device = 'cpu' #"cuda" if torch.cuda.is_available() else 'cpu'
         parser = argparse.ArgumentParser(description="Generate caricatures from user input images")
 
         parser.add_argument("--truncation", type=float, default=1, help="truncation factor")
